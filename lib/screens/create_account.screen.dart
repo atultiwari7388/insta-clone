@@ -27,6 +27,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
+
   Uint8List? _image;
   bool _isLoading = false;
 
@@ -179,7 +180,22 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       SizedBox(height: 24),
                       CustomBtnWidget(
                         btnName: "Create Account",
-                        onPressed: signupUser,
+                        onPressed: () {
+                          if (_nameController.text.isEmpty) {
+                            return showSnackBar(
+                                "Please Enter your name", context);
+                          } else if (_emailController.text.isEmpty) {
+                            return showSnackBar(
+                                "Please Enter your email", context);
+                          } else if (_usernameController.text.isEmpty &&
+                              _passwordController.text.isEmpty &&
+                              _bioController.text.isEmpty) {
+                            return showSnackBar(
+                                "Please Enter Full credential", context);
+                          } else {
+                            signupUser();
+                          }
+                        },
                       ),
 
                       Row(

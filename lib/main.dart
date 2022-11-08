@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
       child: MaterialApp(
-        title: APPNAME,
+        title: "Social People",
         theme: ThemeData.light(),
         debugShowCheckedModeBanner: false,
         home: StreamBuilder(

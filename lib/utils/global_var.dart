@@ -5,7 +5,7 @@ import 'package:instagram_clone/screens/feed_ui.screen.dart';
 import 'package:instagram_clone/screens/profile_screen.dart';
 import 'package:instagram_clone/screens/search.screen.dart';
 
-const APPNAME = 'Inspire Bharat';
+const APPNAME = 'SP - Connect with peoples';
 
 List<Widget> HomeScreenItems = [
   FeedScreen(),
